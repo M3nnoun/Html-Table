@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calcul de la moyenne</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+  <h1>Calcul de la moyenne(Static HTML <i class="fa-brands fa-html5" style="color: #f97e0b;"></i>  ONLY)</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Matières</th>
+        <th>Note par matière</th>
+        <th>Coefficient</th>
+        <th>Note*Coefficient</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mathématiques</td>
+        <td>17</td>
+        <td>4</td>
+        <td>68</td>
+      </tr>
+      <tr>
+        <td>Physique</td>
+        <td>15</td>
+        <td>3</td>
+        <td>45</td>
+      </tr>
+      <tr>
+        <td>Informatique</td>
+        <td>16</td>
+        <td>2</td>
+        <td>32</td>
+      </tr>
+      <tr>
+        <td colspan="2">Totals</td>
+        <td>9</td>
+        <td >145</td>
+      </tr>
+      <tr>
+        <!-- استخدمت 
+        colspan="عدد"
+        لجمع الخلايا فيما بينها
+        حاول ان تغير القيمة لتعرف كيف تعمل 
+  
+          ===> معني span بالعربي
+          يمتد
+          
+          kay hta wahda l attribute of td smitou "rowspan"
+          gha n3tick example dyalo
+      -->
+        <td colspan="3">Moyenne</td>
+        <td>16.12</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h1>Rowspan example</h1>
+
+
+  <table border="1">
+    <tr>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Stock</th>
+    </tr>
+    <tr>
+      <td rowspan="2">Laptop</td>
+      <td>$800</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <!-- The cell for "Product" is rowspanned, so it spans two rows -->
+      <td>$850</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td>$400</td>
+      <td>20</td>
+    </tr>
+  </table>
+  <h1>Calcul de la moyenne(Dynamic HTML <i class="fa-brands fa-html5" style="color: #f97e0b;"></i> +JavaScript <i class="fa-brands fa-square-js" style="color: #f3d512;"></i> )</h1>
+  <table id="gradeTable">
+    <thead>
+      <tr>
+        <th>Matières</th>
+        <th>Note par matière</th>
+        <th>Coefficient</th>
+        <th>Note*Coefficient</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mathématiques</td>
+        <td><input type="number" id="mathNote" onchange="calculateTotalAndAverage()"></td>
+        <td><input type="number" id="mathCoefficient" onchange="calculateTotalAndAverage()"></td>
+        <td id="mathTotal">0</td>
+      </tr>
+      <tr>
+        <td>Physique</td>
+        <td><input type="number" id="physiqueNote" onchange="calculateTotalAndAverage()"></td>
+        <td><input type="number" id="physiqueCoefficient" onchange="calculateTotalAndAverage()"></td>
+        <td id="physiqueTotal">0</td>
+      </tr>
+      <tr>
+        <td>Informatique</td>
+        <td><input type="number" id="infoNote" onchange="calculateTotalAndAverage()"></td>
+        <td><input type="number" id="infoCoefficient" onchange="calculateTotalAndAverage()"></td>
+        <td id="infoTotal">0</td>
+      </tr>
+      <tr>
+        <td colspan="2">Totals</td>
+        <td id="totalCoefficient">0</td>
+        <td id="total">0</td>
+      </tr>
+      <tr>
+        <td colspan="3">Moyenne</td>
+        <td id="average">0</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+
+<!-- some styling -->
+  <style>
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+th {
+  background-color: #ccc;
+}
+
+.defficient {
+  color: red;
+}
+  </style>
+
+  <script src="main.js"></script>
+</body>
+</html>
